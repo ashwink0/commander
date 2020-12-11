@@ -1,0 +1,47 @@
+{
+  "name": "cmmndr",
+  "version": "1.0.0",
+  "author": "ashwink0 @ashwink0",
+  "bin": {
+    "cmmndr": "./bin/run"
+  },
+  "bugs": "https://github.com/ashwink0/cmmndr/issues",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.26.0",
+    "globby": "^10.0.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json",
+    "/src"
+  ],
+  "homepage": "https://github.com/ashwink0/cmmndr",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "src/index.js",
+  "oclif": {
+    "commands": "./src/commands",
+    "bin": "cmmndr",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "ashwink0/cmmndr",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  }
+}
