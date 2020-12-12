@@ -1,6 +1,6 @@
 {
   "name": "cmmndr",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "author": "ashwink0 @ashwink0",
   "bin": {
     "cmmndr": "./bin/run"
