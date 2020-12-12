@@ -26,7 +26,7 @@ class Add extends Command {
 }
 
 Add.examples=[
-  '$ cmmndr add expressProject `npm init -y && npm install express cors morgan && code .`'
+  '$ cmmndr add expressProject `code . && nodemon server.js && npm install`'
 ]
 
 

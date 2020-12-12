@@ -4,7 +4,7 @@ const { exec } = require("child_process");
 
 class Run extends Command {
   async run() {
-    const {args, flags} = this.parse(Run)
+    const {args} = this.parse(Run)
 
     if(fs.existsSync('.cmmndr')){
       var data=fs.readFileSync('.cmmndr').toString()
@@ -34,7 +34,7 @@ class Run extends Command {
 }
 
 Run.examples=[
-  '$ cmmndr add expressProject `npm init -y && npm install express cors morgan && code .`'
+  '$ cmmndr run expressProject'
 ]
 
 
@@ -42,19 +42,13 @@ Run.args=[
   {
     name: 'Shortcut',
     required: true,
-    description: 'The command that you want to point to a consolidated command'
+    description: 'The command that you want to run.'
   },
 ]
 
-Run.flags={
-  force: flags.boolean({char: 'f'}),
-}
-
-Run.description = `Adds a commander command to the current directory.
+Run.description = `Runs a commander command.
 ...
-Adds a specified list of commands under a shortcut.
-If the shortcut already exists, the command can be overwritten by a new command with the --force flag.
-Note: If the command has spaces in it, you must put it in quotes.
+Finds the list of commands stored under the provided shortcut.
 `;
 
 module.exports = Run
