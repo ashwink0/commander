@@ -19,7 +19,7 @@ $ npm install -g cmmndr
 $ cmmndr COMMAND
 running command...
 $ cmmndr (-v|--version|version)
-cmmndr/1.1.0 darwin-x64 node-v12.16.1
+cmmndr/1.1.1 darwin-x64 node-v12.16.1
 $ cmmndr --help [COMMAND]
 USAGE
   $ cmmndr COMMAND
@@ -55,10 +55,10 @@ DESCRIPTION
   Note: If the command has spaces in it, you must put it in quotes.
 
 EXAMPLE
-  $ cmmndr add expressProject `npm init -y && npm install express cors morgan && code .`
+  $ cmmndr add expressProject `code . && nodemon server.js && npm install`
 ```
 
-_See code: [src/commands/add.js](https://github.com/ashwink0/cmmndr/blob/v1.1.0/src/commands/add.js)_
+_See code: [src/commands/add.js](https://github.com/ashwink0/cmmndr/blob/v1.1.1/src/commands/add.js)_
 
 ## `cmmndr help [COMMAND]`
 
@@ -90,31 +90,26 @@ DESCRIPTION
   Generates a .cmmndr file in the current directory to store consolidated commands
 ```
 
-_See code: [src/commands/init.js](https://github.com/ashwink0/cmmndr/blob/v1.1.0/src/commands/init.js)_
+_See code: [src/commands/init.js](https://github.com/ashwink0/cmmndr/blob/v1.1.1/src/commands/init.js)_
 
 ## `cmmndr run SHORTCUT`
 
-Adds a commander command to the current directory.
+Runs a commander command.
 
 ```
 USAGE
   $ cmmndr run SHORTCUT
 
 ARGUMENTS
-  SHORTCUT  The command that you want to point to a consolidated command
-
-OPTIONS
-  -f, --force
+  SHORTCUT  The command that you want to run.
 
 DESCRIPTION
   ...
-  Adds a specified list of commands under a shortcut.
-  If the shortcut already exists, the command can be overwritten by a new command with the --force flag.
-  Note: If the command has spaces in it, you must put it in quotes.
+  Finds the list of commands stored under the provided shortcut.
 
 EXAMPLE
-  $ cmmndr add expressProject `npm init -y && npm install express cors morgan && code .`
+  $ cmmndr run expressProject
 ```
 
-_See code: [src/commands/run.js](https://github.com/ashwink0/cmmndr/blob/v1.1.0/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/ashwink0/cmmndr/blob/v1.1.1/src/commands/run.js)_
 <!-- commandsstop -->
