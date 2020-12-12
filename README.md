@@ -19,7 +19,7 @@ $ npm install -g cmmndr
 $ cmmndr COMMAND
 running command...
 $ cmmndr (-v|--version|version)
-cmmndr/1.0.0 darwin-x64 node-v12.16.1
+cmmndr/1.1.0 darwin-x64 node-v12.16.1
 $ cmmndr --help [COMMAND]
 USAGE
   $ cmmndr COMMAND
@@ -28,26 +28,37 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`cmmndr hello`](#cmmndr-hello)
+* [`cmmndr add SHORTCUT COMMAND`](#cmmndr-add-shortcut-command)
 * [`cmmndr help [COMMAND]`](#cmmndr-help-command)
+* [`cmmndr init`](#cmmndr-init)
+* [`cmmndr run SHORTCUT`](#cmmndr-run-shortcut)
 
-## `cmmndr hello`
+## `cmmndr add SHORTCUT COMMAND`
 
-Describe the command here
+Adds a commander command to the current directory.
 
 ```
 USAGE
-  $ cmmndr hello
+  $ cmmndr add SHORTCUT COMMAND
+
+ARGUMENTS
+  SHORTCUT  The command that you want to point to a consolidated command
+  COMMAND   The list of commands you want run with your shortcut.
 
 OPTIONS
-  -n, --name=name  name to print
+  -f, --force
 
 DESCRIPTION
   ...
-  Extra documentation goes here
+  Adds a specified list of commands under a shortcut.
+  If the shortcut already exists, the command can be overwritten by a new command with the --force flag.
+  Note: If the command has spaces in it, you must put it in quotes.
+
+EXAMPLE
+  $ cmmndr add expressProject `npm init -y && npm install express cors morgan && code .`
 ```
 
-_See code: [src/commands/hello.js](https://github.com/ashwink0/cmmndr/blob/v1.0.0/src/commands/hello.js)_
+_See code: [src/commands/add.js](https://github.com/ashwink0/cmmndr/blob/v1.1.0/src/commands/add.js)_
 
 ## `cmmndr help [COMMAND]`
 
@@ -65,4 +76,45 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v3.2.0/src/commands/help.ts)_
+
+## `cmmndr init`
+
+Initialize a project with a commander file.
+
+```
+USAGE
+  $ cmmndr init
+
+DESCRIPTION
+  ...
+  Generates a .cmmndr file in the current directory to store consolidated commands
+```
+
+_See code: [src/commands/init.js](https://github.com/ashwink0/cmmndr/blob/v1.1.0/src/commands/init.js)_
+
+## `cmmndr run SHORTCUT`
+
+Adds a commander command to the current directory.
+
+```
+USAGE
+  $ cmmndr run SHORTCUT
+
+ARGUMENTS
+  SHORTCUT  The command that you want to point to a consolidated command
+
+OPTIONS
+  -f, --force
+
+DESCRIPTION
+  ...
+  Adds a specified list of commands under a shortcut.
+  If the shortcut already exists, the command can be overwritten by a new command with the --force flag.
+  Note: If the command has spaces in it, you must put it in quotes.
+
+EXAMPLE
+  $ cmmndr add expressProject `npm init -y && npm install express cors morgan && code .`
+```
+
+_See code: [src/commands/run.js](https://github.com/ashwink0/cmmndr/blob/v1.1.0/src/commands/run.js)_
 <!-- commandsstop -->
