@@ -4,8 +4,6 @@ let fs = require('fs');
 class Add extends Command {
   async run() {
     const {args, flags} = this.parse(Add)
-    this.log(args.Shortcut)
-    this.log(args.Command)
 
     if(fs.existsSync('.cmmndr')){
       var data=fs.readFileSync('.cmmndr').toString()
