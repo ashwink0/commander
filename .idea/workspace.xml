@@ -4,11 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7dcd9523-290b-4c9e-bc6c-fcfd41872fd9" name="Default Changelist" comment="" />
+    <list default="true" id="7dcd9523-290b-4c9e-bc6c-fcfd41872fd9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/commands/remove.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/commands/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/commands/add.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EditorConfigPreviewManager">
+    <editorConfig file="$PROJECT_DIR$/.editorconfig" previewFile="$PROJECT_DIR$/src/commands/add.js" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,8 +45,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="discord-project" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -52,6 +61,11 @@
       <updated>1607732761394</updated>
       <workItem from="1607732769327" duration="513000" />
       <workItem from="1607738554619" duration="12520000" />
+      <workItem from="1607805196162" duration="117000" />
+      <workItem from="1607808906777" duration="1268000" />
+      <workItem from="1607836133311" duration="33000" />
+      <workItem from="1607836210159" duration="324000" />
+      <workItem from="1608143900914" duration="626000" />
     </task>
     <servers />
   </component>
@@ -68,6 +82,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
