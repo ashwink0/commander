@@ -26,7 +26,8 @@
   ],
   "homepage": "https://github.com/ashwink0/commander",
   "keywords": [
-    "oclif"
+    "oclif",
+		"cli"
   ],
   "license": "MIT",
   "main": "src/index.js",

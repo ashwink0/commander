@@ -7,6 +7,7 @@ cmmndr
 [![Version](https://img.shields.io/npm/v/cmmndr.svg)](https://npmjs.org/package/cmmndr)
 [![Downloads/week](https://img.shields.io/npm/dw/cmmndr.svg)](https://npmjs.org/package/cmmndr)
 [![License](https://img.shields.io/npm/l/cmmndr.svg)](https://github.com/ashwink0/cmmndr/blob/master/package.json)
+[![Build Status](https://travis-ci.com/ashwink0/commander.svg?branch=master)](https://travis-ci.com/ashwink0/commander)
 
 <!-- toc -->
 * [Usage](#usage)
