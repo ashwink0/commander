@@ -19,7 +19,7 @@ $ npm install -g cmmndr
 $ cmmndr COMMAND
 running command...
 $ cmmndr (-v|--version|version)
-cmmndr/1.1.2 darwin-x64 node-v12.16.1
+cmmndr/1.2.0 darwin-x64 node-v12.16.1
 $ cmmndr --help [COMMAND]
 USAGE
   $ cmmndr COMMAND
@@ -31,6 +31,7 @@ USAGE
 * [`cmmndr add SHORTCUT COMMAND`](#cmmndr-add-shortcut-command)
 * [`cmmndr help [COMMAND]`](#cmmndr-help-command)
 * [`cmmndr init`](#cmmndr-init)
+* [`cmmndr remove SHORTCUT`](#cmmndr-remove-shortcut)
 * [`cmmndr run SHORTCUT`](#cmmndr-run-shortcut)
 
 ## `cmmndr add SHORTCUT COMMAND`
@@ -55,10 +56,10 @@ DESCRIPTION
   Note: If the command has spaces in it, you must put it in quotes.
 
 EXAMPLE
-  $ cmmndr add expressProject `code . && nodemon server.js && npm install`
+  $ cmmndr add expressProject `code . && npm install && nodemon server.js`
 ```
 
-_See code: [src/commands/add.js](https://github.com/ashwink0/cmmndr/blob/v1.1.2/src/commands/add.js)_
+_See code: [src/commands/add.js](https://github.com/ashwink0/cmmndr/blob/v1.2.0/src/commands/add.js)_
 
 ## `cmmndr help [COMMAND]`
 
@@ -90,7 +91,28 @@ DESCRIPTION
   Generates a .cmmndr file in the current directory to store consolidated commands
 ```
 
-_See code: [src/commands/init.js](https://github.com/ashwink0/cmmndr/blob/v1.1.2/src/commands/init.js)_
+_See code: [src/commands/init.js](https://github.com/ashwink0/cmmndr/blob/v1.2.0/src/commands/init.js)_
+
+## `cmmndr remove SHORTCUT`
+
+Removes a commander command.
+
+```
+USAGE
+  $ cmmndr remove SHORTCUT
+
+ARGUMENTS
+  SHORTCUT  The command that you want to remove.
+
+DESCRIPTION
+  ...
+  Finds the supplied command and removes it from the directory.
+
+EXAMPLE
+  $ cmmndr remove expressProject
+```
+
+_See code: [src/commands/remove.js](https://github.com/ashwink0/cmmndr/blob/v1.2.0/src/commands/remove.js)_
 
 ## `cmmndr run SHORTCUT`
 
@@ -111,5 +133,5 @@ EXAMPLE
   $ cmmndr run expressProject
 ```
 
-_See code: [src/commands/run.js](https://github.com/ashwink0/cmmndr/blob/v1.1.2/src/commands/run.js)_
+_See code: [src/commands/run.js](https://github.com/ashwink0/cmmndr/blob/v1.2.0/src/commands/run.js)_
 <!-- commandsstop -->
