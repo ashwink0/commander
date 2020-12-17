@@ -8,6 +8,10 @@ cmmndr
 [![Downloads/week](https://img.shields.io/npm/dw/cmmndr.svg)](https://npmjs.org/package/cmmndr)
 [![License](https://img.shields.io/npm/l/cmmndr.svg)](https://github.com/ashwink0/cmmndr/blob/master/package.json)
 [![Build Status](https://travis-ci.com/ashwink0/commander.svg?branch=master)](https://travis-ci.com/ashwink0/commander)
+[![Dependencies](https://status.david-dm.org/gh/ashwink0/cmmndr.svg)](https://david-dm.org/ashwink0/cmmndr)
+
+[![NPM](https://nodei.co/npm/cmmndr.png?compact=true)](https://nodei.co/npm/cmmndr/)
+
 
 <!-- toc -->
 * [Usage](#usage)

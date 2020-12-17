@@ -25,7 +25,7 @@ class View extends Command {
 }
 
 View.examples=[
-	'$ cmmndr list expressProject'
+	'$ cmmndr view expressProject'
 ]
 
 
