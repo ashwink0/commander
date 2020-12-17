@@ -3,16 +3,23 @@ let fs = require('fs');
 
 class Init extends Command {
   async run() {
-    if(!fs.existsSync('.cmmndr')){
+		const {flags} = this.parse(Init)
+
+		if(!fs.existsSync('.cmmndr') || flags.force){
       fs.writeFile('.cmmndr', "{}", function(err) {
         if(err) return;
       });
       this.log('Initialized Successfully')
     }
+
     else{
-      this.log('This directory has already been initialized.')
+      this.log('This directory has already been initialized. Use the --force flag to reinitialize the directory.')
     }
   }
+}
+
+Init.flags={
+	force: flags.boolean({char: 'f'}),
 }
 
 Init.description = `Initialize a project with a commander file.
