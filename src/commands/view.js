@@ -1,6 +1,5 @@
 const {Command, flags} = require('@oclif/command')
 let fs = require('fs');
-const { exec } = require("child_process");
 
 class View extends Command {
 	async run() {
@@ -27,7 +26,6 @@ class View extends Command {
 View.examples=[
 	'$ cmmndr view expressProject'
 ]
-
 
 View.args=[
 	{

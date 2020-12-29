@@ -1,5 +1,6 @@
 const {Command, flags} = require('@oclif/command')
 let fs = require('fs');
+const {log} = require("@oclif/dev-cli/lib/log");
 
 class Init extends Command {
   async run() {
@@ -7,7 +8,7 @@ class Init extends Command {
 
 		if(!fs.existsSync('.cmmndr') || flags.force){
       fs.writeFile('.cmmndr', "{}", function(err) {
-        if(err) return;
+        if(err) log('An error occurred.');
       });
       this.log('Initialized Successfully')
     }

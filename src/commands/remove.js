@@ -1,6 +1,5 @@
-const {Command, flags} = require('@oclif/command')
+const {Command} = require('@oclif/command')
 let fs = require('fs');
-const { exec } = require("child_process");
 
 class Remove extends Command {
 	async run() {
@@ -28,7 +27,6 @@ class Remove extends Command {
 Remove.examples=[
 	'$ cmmndr remove expressProject'
 ]
-
 
 Remove.args=[
 	{

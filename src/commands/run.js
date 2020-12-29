@@ -1,4 +1,4 @@
-const {Command, flags} = require('@oclif/command')
+const {Command} = require('@oclif/command')
 let fs = require('fs');
 const { exec } = require("child_process");
 
@@ -36,7 +36,6 @@ class Run extends Command {
 Run.examples=[
   '$ cmmndr run expressProject'
 ]
-
 
 Run.args=[
   {
