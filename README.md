@@ -163,5 +163,5 @@ EXAMPLE
   $ cmmndr view expressProject
 ```
 
-_See code: [src/commands/view.js](https://github.com/ashwink0/commander/blob/v1.3.2/src/commands/view.js)_
+_See code: [src/commands/list.js](https://github.com/ashwink0/commander/blob/v1.3.2/src/commands/view.js)_
 <!-- commandsstop -->
