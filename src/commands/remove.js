@@ -2,17 +2,17 @@ const {cli} = require("cli-ux");
 const {Command} = require('@oclif/command')
 let fs = require('fs');
 
-class Remove extends Command {
+class Remove extends Command{
 	async run() {
 		const {args} = this.parse(Remove)
 
 		cli.action.start('Removing...')
 
 		if(fs.existsSync('.cmmndr')){
-			var data=fs.readFileSync('.cmmndr').toString()
-			var dataObj=JSON.parse(data)
+			var data = fs.readFileSync('.cmmndr').toString()
+			var dataObj = JSON.parse(data)
 
-			if(dataObj[args.Shortcut]) {
+			if(dataObj[args.Shortcut]){
 				delete dataObj[args.Shortcut]
 				fs.writeFileSync('.cmmndr', JSON.stringify(dataObj));
 				cli.action.stop()
@@ -29,11 +29,11 @@ class Remove extends Command {
 	}
 }
 
-Remove.examples=[
+Remove.examples = [
 	'$ cmmndr remove expressProject'
 ]
 
-Remove.args=[
+Remove.args = [
 	{
 		name: 'Shortcut',
 		required: true,

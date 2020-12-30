@@ -3,52 +3,52 @@ const {cli} = require("cli-ux");
 
 let fs = require('fs');
 
-class Add extends Command {
-  async run() {
-    const {args, flags} = this.parse(Add)
+class Add extends Command{
+	async run() {
+		const {args, flags} = this.parse(Add)
 		cli.action.start('Adding...')
 
 		if(fs.existsSync('.cmmndr')){
-      var data=fs.readFileSync('.cmmndr').toString()
-      var dataObj=JSON.parse(data)
+			var data = fs.readFileSync('.cmmndr').toString()
+			var dataObj = JSON.parse(data)
 
-      if(dataObj[args.Shortcut] && !flags.force) {
+			if(dataObj[args.Shortcut] && !flags.force){
 				cli.action.stop()
 				this.log('This command is already in use. Use the --force flag to overwrite it.')
 				return;
-      }
-      dataObj[args.Shortcut]=args.Command;
-      fs.writeFileSync('.cmmndr', JSON.stringify(dataObj));
+			}
+			dataObj[args.Shortcut] = args.Command;
+			fs.writeFileSync('.cmmndr', JSON.stringify(dataObj));
 			cli.action.stop()
 		}
 
-    else{
+		else{
 			cli.action.stop('error')
 			this.log('This directory has not been initialized. Run `cmmndr init` to initialize.')
-    }
+		}
 
-  }
+	}
 }
 
-Add.examples=[
-  '$ cmmndr add expressProject `code . && npm install && nodemon server.js`'
+Add.examples = [
+	'$ cmmndr add expressProject `code . && npm install && nodemon server.js`'
 ]
 
-Add.args=[
-  {
-    name: 'Shortcut',
-    required: true,
-    description: 'The command that you want to point to a consolidated command'
-  },
-  {
-    name: 'Command',
-    required: true,
-    description: 'The list of commands you want run with your shortcut.'
-  }
+Add.args = [
+	{
+		name: 'Shortcut',
+		required: true,
+		description: 'The command that you want to point to a consolidated command'
+	},
+	{
+		name: 'Command',
+		required: true,
+		description: 'The list of commands you want run with your shortcut.'
+	}
 ]
 
-Add.flags={
-  force: flags.boolean({char: 'f'}),
+Add.flags = {
+	force: flags.boolean({char: 'f'}),
 }
 
 Add.description = `Adds a commander command to the current directory.
