@@ -1,25 +1,32 @@
 const {Command, flags} = require('@oclif/command')
+const {cli} = require("cli-ux");
+
 let fs = require('fs');
 
 class Add extends Command {
   async run() {
     const {args, flags} = this.parse(Add)
+		cli.action.start('Adding...')
 
-    if(fs.existsSync('.cmmndr')){
+		if(fs.existsSync('.cmmndr')){
       var data=fs.readFileSync('.cmmndr').toString()
       var dataObj=JSON.parse(data)
 
       if(dataObj[args.Shortcut] && !flags.force) {
-        this.log('This command is already in use. Use the --force flag to overwrite it.')
-        return;
+				cli.action.stop()
+				this.log('This command is already in use. Use the --force flag to overwrite it.')
+				return;
       }
       dataObj[args.Shortcut]=args.Command;
       fs.writeFileSync('.cmmndr', JSON.stringify(dataObj));
-    }
+			cli.action.stop()
+		}
 
     else{
-      this.log('This directory has not been initialized. Run `cmmndr init` to initialize.')
+			cli.action.stop('error')
+			this.log('This directory has not been initialized. Run `cmmndr init` to initialize.')
     }
+
   }
 }
 

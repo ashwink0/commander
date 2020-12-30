@@ -1,21 +1,24 @@
-const {Command, flags} = require('@oclif/command')
+const {cli} = require("cli-ux");
+const {Command} = require('@oclif/command')
 let fs = require('fs');
-const {log} = require("@oclif/dev-cli/lib/log");
 
 class List extends Command {
 	async run() {
 		const {args} = this.parse(List)
 
+		cli.action.start('Loading...')
+
 		if(fs.existsSync('.cmmndr')){
 			var data=fs.readFileSync('.cmmndr').toString()
-			var dataObj=JSON.parse(data)
-
+			let dataObj=JSON.parse(data)
+			cli.action.stop()
 			for (var shortcut in dataObj) {
-				log(shortcut + ": \t" + dataObj[shortcut]);
+				this.log(shortcut + ": \t" + dataObj[shortcut]);
 			}
 		}
 
 		else{
+			cli.action.stop()
 			this.log('This directory has not been initialized. Run `cmmndr init` to initialize.')
 		}
 	}
@@ -25,9 +28,6 @@ List.examples=[
 	'$ cmmndr list'
 ]
 
-List.args=[
-
-]
 
 List.description = `Displays the list of shortcuts and commands in a certain directory.
 ...

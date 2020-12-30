@@ -1,3 +1,4 @@
+const {cli} = require("cli-ux");
 const {Command} = require('@oclif/command')
 let fs = require('fs');
 const { exec } = require("child_process");
@@ -6,17 +7,18 @@ class Run extends Command {
   async run() {
     const {args} = this.parse(Run)
 
-    if(fs.existsSync('.cmmndr')){
+		cli.action.start('Loading...')
+
+		if(fs.existsSync('.cmmndr')){
       var data=fs.readFileSync('.cmmndr').toString()
       var dataObj=JSON.parse(data)
 
       if(dataObj[args.Shortcut]) {
-        exec(dataObj[args.Shortcut], (err, stdout, stderr) => {
+				cli.action.stop()
+				exec(dataObj[args.Shortcut], (err, stdout, stderr) => {
           if (err) {
-            //some err occurred
             console.error(err)
           } else {
-            // the *entire* stdout and stderr (buffered)
             console.log(`${stdout}`);
             console.log(`${stderr}`);
           }
@@ -24,11 +26,13 @@ class Run extends Command {
 
       }
       else{
+				cli.action.stop('error')
         this.log('This command does not exist')
       }
     }
     else{
-      this.log('This directory has not been initialized. Run `cmmndr init` to initialize.')
+			cli.action.stop('error')
+			this.log('This directory has not been initialized. Run `cmmndr init` to initialize.')
     }
   }
 }

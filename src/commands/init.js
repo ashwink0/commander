@@ -1,22 +1,27 @@
+const {cli} = require("cli-ux");
 const {Command, flags} = require('@oclif/command')
 let fs = require('fs');
-const {log} = require("@oclif/dev-cli/lib/log");
 
 class Init extends Command {
   async run() {
 		const {flags} = this.parse(Init)
+		cli.action.start('Initializing...')
 
 		if(!fs.existsSync('.cmmndr') || flags.force){
       fs.writeFile('.cmmndr', "{}", function(err) {
-        if(err) log('An error occurred.');
+        if(err){
+					cli.action.stop('error')
+					return
+				};
       });
-      this.log('Initialized Successfully')
     }
 
     else{
       this.log('This directory has already been initialized. Use the --force flag to reinitialize the directory.')
     }
-  }
+
+		cli.action.stop()
+	}
 }
 
 Init.flags={
