@@ -6,11 +6,9 @@ cmmndr
 [![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/cmmndr.svg)](https://npmjs.org/package/cmmndr)
 [![Downloads/week](https://img.shields.io/npm/dw/cmmndr.svg)](https://npmjs.org/package/cmmndr)
+[![Downloads](https://badgen.net/npm/dt/cmmndr)](https://www.npmjs.com/package/cmmndr)
 [![License](https://img.shields.io/npm/l/cmmndr.svg)](https://github.com/ashwink0/commander/blob/master/LICENSE)
 [![Build Status](https://travis-ci.com/ashwink0/commander.svg?branch=master)](https://travis-ci.com/ashwink0/commander)
-[![Dependencies](https://status.david-dm.org/gh/ashwink0/cmmndr.svg)](https://david-dm.org/ashwink0/cmmndr)
-
-[![NPM](https://nodei.co/npm/cmmndr.png?compact=true)](https://nodei.co/npm/cmmndr/)
 
 
 <!-- toc -->
